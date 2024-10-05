@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__inner {
+  display: flex;
+  padding: 17px 22px 8px 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+}
+
+.header__logo-link {
+}
+
+.header__logo-txt {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.header__avatar {
+}
+
+.header__avatar-img {
+  width: 40px;
+  height: 40px;
+}
