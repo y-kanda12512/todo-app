@@ -7,10 +7,17 @@
 }
 
 .main__title {
-  font-size: 26px;
-  font-weight: 800;
 }
 
 .main__content {
-  margin-top: 35px;
+}
+
+.dropdown {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-wrap: nowrap;
+  background-color: #f4f4f4;
 }

@@ -1,0 +1,34 @@
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.fields-password {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 10px;
+  background: #f4f4f4;
+  padding: 8px;
+}
+
+.form-submit {
+  display: block;
+  width: calc((362px / 414px) * 100%);
+  padding: 8px 10px 7px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  background: #f8bd1c;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+}
