@@ -25,6 +25,13 @@
 }
 
 .header__avatar {
+  position: relative;
+
+  &:hover {
+    .dropdown {
+      display: block;
+    }
+  }
 }
 
 .header__avatar-img {

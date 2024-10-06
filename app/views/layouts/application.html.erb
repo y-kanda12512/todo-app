@@ -27,13 +27,26 @@
         </a>
       </div>
       <div class="header__avatar">
+        <% if user_signed_in? %>
         <%= image_tag 'avatar-1',class: 'header__avatar-img' %>
+        <div class="dropdown">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </div>
+        <% elsif !user_signed_in? && !(request.path == new_user_session_path || request.path == user_session_path || request.path == new_user_registration_path) %>
+        <%= link_to 'Login', user_session_path ,class: 'header__login'%>
+        <% end %>
       </div>
     </div>
   </header>
+  <% if flash.present? %>
+  <div class="flash">
+    <% flash.each do | key,value | %>
+    <div class="<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+  <% end %>
   <main class="main">
     <div class="main__inner">
-      <h1 class="main__title">All Boards</h1>
       <div class="main__content">
         <%= yield %>
       </div>

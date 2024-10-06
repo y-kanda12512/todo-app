@@ -1,0 +1,353 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+main,
+aside,
+figure,
+figcaption {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  vertical-align: top;
+}
+
+body {
+  font-family: Avenir;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 33px;
+}
+
+input {
+  border: none;
+}
+
+.main {
+  padding-block: 32px 31px;
+}
+
+.main__inner {
+  padding-inline: 30px 22px;
+}
+
+.dropdown {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-wrap: nowrap;
+  background-color: #f4f4f4;
+}
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 17px 22px 8px 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo-txt {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.header__avatar {
+  position: relative;
+}
+.header__avatar:hover .dropdown {
+  display: block;
+}
+
+.header__avatar-img {
+  width: 40px;
+  height: 40px;
+}
+
+.flash {
+  padding: 10px;
+  position: fixed;
+  top: 15px;
+  right: 0;
+  background: #fff;
+  -webkit-animation: flash-slide 3s forwards;
+          animation: flash-slide 3s forwards;
+  border: 1px solid #000;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+}
+
+@-webkit-keyframes flash-slide {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); /* 画面外の右 */
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); /* 画面内にスライドイン */
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); /* 表示されたままキープ */
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); /* 画面外に戻る */
+    opacity: 0;
+  }
+}
+
+@keyframes flash-slide {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); /* 画面外の右 */
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); /* 画面内にスライドイン */
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%); /* 表示されたままキープ */
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); /* 画面外に戻る */
+    opacity: 0;
+  }
+}
+.posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 26px;
+}
+
+.post-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 32px 16px 20px 17px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.post-card__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.post-card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+}
+
+.post-card__title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.post-card__text {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.post-card__dropdown {
+  margin-top: 7px;
+}
+
+.post-card__dropdown-img {
+  width: 24px;
+  height: 6px;
+}
+
+.post-card__author-img {
+  width: 30px;
+  height: 30px;
+}
+
+.post-card--new {
+  padding-block: 68px 67px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.post-card__text--new {
+  font-size: 18px;
+}
+
+.form-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 33px;
+}
+
+.fields-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 10px;
+  background: #f4f4f4;
+  padding: 8px;
+}
+
+.form-submit {
+  display: block;
+  width: 87.4396135266%;
+  padding: 8px 10px 7px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 4px;
+  background: #f8bd1c;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+}
