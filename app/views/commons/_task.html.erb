@@ -1,0 +1,28 @@
+<div class="tasks__content-card task-card">
+    <div class="task-card__head">
+        <div class="task-card__info">
+            <%= link_to task_tasks_path(task) do %>
+            <h3 class="task-card__title">
+                <%= task.name %>
+            </h3>
+            <div class="task-card__text">
+                <%= task.description %>
+            </div>
+            <% end %>
+        </div>
+        <% if user_signed_in? && current_user.has_written?(task) %>
+        <div class="task-card__dropdown">
+            <%= image_tag 'dots.png',class: 'task-card__dropdown-img',alt: 'オプション' %>
+            <div class="task-card__dropdown-content">
+                <%= link_to 'Edit', edit_task_path(task),class: 'task-card__dropdown-link' %>
+                <%= link_to 'Delete', task_path(task), method: :delete, data: { confirm: '本当に削除しますか？' } ,class: 'task-card__dropdown-link' %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="task-card__body">
+        <div class="task-card__author">
+            <%= image_tag task.user.avatar_image ,class: 'task-card__author-img' %>
+        </div>
+    </div>
+</div>

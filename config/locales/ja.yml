@@ -1,6 +1,21 @@
 ja:
-  devise:
-    failure:
-      invalid: "無効なログイン情報です"
-      user:
-        invalid: "ユーザー名またはパスワードが正しくありません"
+  activerecord:
+    errors:
+      models:
+        user:
+            attributes:
+              email:
+                taken: "そのEメールはすでに使用されています。"
+                blank: "Eメールを入力してください。"
+              password:
+                blank: "パスワードを入力してください。"
+                too_short: "パスワードは最低 %{count} 文字である必要があります。"
+              password_confirmation:
+                confirmation: "パスワードが一致しません。"
+      messages:
+        record_invalid: "無効なレコードです。"
+  errors:
+    messages:
+      blank: "入力が必要です。"
+      taken: "すでに存在しています。"
+      too_short: "短すぎます。"

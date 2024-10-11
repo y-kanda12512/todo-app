@@ -1,0 +1,90 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.task-card {
+  display: flex;
+  padding: 32px 16px 20px 17px;
+  flex-direction: column;
+  gap: 30px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.task-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.task-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-card__title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.task-card__text {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.task-card__dropdown {
+  position: relative;
+  padding-bottom: 8px;
+
+  &:hover {
+    .task-card__dropdown-content {
+      display: flex;
+    }
+  }
+}
+
+.task-card__dropdown-content {
+  display: none;
+  padding: 10px;
+  flex-direction: column;
+  gap: 11px;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.task-card__dropdown-link {
+}
+
+.task-card__dropdown-img {
+  width: 24px;
+  height: 6px;
+}
+
+.task-card__body {
+}
+
+.task-card__author {
+}
+
+.task-card__author-img {
+  width: 30px;
+  height: 30px;
+}
+
+.task-card--new {
+  padding-block: 68px 67px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.task-card__text--new {
+  font-size: 18px;
+}

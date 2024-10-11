@@ -22,15 +22,18 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__logo">
-        <a href="#" class="header__logo-link">
-          <span class="header__logo-txt">Boards</span>
-        </a>
+        <%= link_to root_path ,class: 'header__logo-link' do %>
+        <span class="header__logo-txt">Boards</span>
+        <% end %>
       </div>
       <div class="header__avatar">
         <% if user_signed_in? %>
-        <%= image_tag 'avatar-1',class: 'header__avatar-img' %>
+
+        <%= image_tag current_user.avatar_image,class: 'header__avatar-img' %>
+
         <div class="dropdown">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <%= link_to 'プロフィール編集',edit_profile_path,class: 'dropdown-link' %>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'dropdown-link' %>
         </div>
         <% elsif !user_signed_in? && !(request.path == new_user_session_path || request.path == user_session_path || request.path == new_user_registration_path) %>
         <%= link_to 'Login', user_session_path ,class: 'header__login'%>

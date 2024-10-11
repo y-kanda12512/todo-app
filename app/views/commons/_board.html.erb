@@ -1,0 +1,28 @@
+<div class="boards__content-card board-card">
+    <div class="board-card__head">
+        <div class="board-card__info">
+            <%= link_to board_tasks_path(board) do %>
+            <h3 class="board-card__title">
+                <%= board.name %>
+            </h3>
+            <div class="board-card__text">
+                <%= board.description %>
+            </div>
+            <% end %>
+        </div>
+        <% if user_signed_in? && current_user.has_written?(board) %>
+        <div class="board-card__dropdown">
+            <%= image_tag 'dots.png',class: 'board-card__dropdown-img',alt: 'オプション' %>
+            <div class="board-card__dropdown-content">
+                <%= link_to 'Edit', edit_board_path(board),class: 'board-card__dropdown-link' %>
+                <%= link_to 'Delete', board_path(board), method: :delete, data: { confirm: '本当に削除しますか？' } ,class: 'board-card__dropdown-link' %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <div class="board-card__body">
+        <div class="board-card__author">
+            <%= image_tag board.user.avatar_image ,class: 'board-card__author-img' %>
+        </div>
+    </div>
+</div>

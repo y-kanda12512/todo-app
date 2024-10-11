@@ -1,0 +1,19 @@
+<h2><%= @board.name %></h2>
+
+<div class="tasks">
+    <% @tasks.each do | task | %>
+    <%= render 'commons/task',task: task %>
+    <% end %>
+
+    <!-- ユーザーがログインしていたらタスクを追加できる -->
+    <% if user_signed_in? %>
+    <%= link_to new_board_task_path,class: 'task-card--new' do %>
+    <span class="task-card__text--new">+ Add new card</span>
+    <% end %>
+    <% else %>
+    <!-- ユーザー登録されてなかったらユーザー登録を行うように登録画面へ遷移する -->
+    <%= link_to new_user_registration_path,class: 'task-card--new' do %>
+    <span class="task-card__text--new">+ Add new card</span>
+    <% end %>
+    <% end %>
+</div>

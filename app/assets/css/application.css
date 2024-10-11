@@ -97,6 +97,7 @@ textarea {
   font: inherit;
   color: inherit;
   vertical-align: top;
+  border: none;
 }
 
 body {
@@ -129,6 +130,10 @@ input {
   right: 0;
   text-wrap: nowrap;
   background-color: #f4f4f4;
+}
+
+.dropdown-link {
+  display: block;
 }
 
 .header {
@@ -228,7 +233,7 @@ input {
     opacity: 0;
   }
 }
-.posts {
+.boards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,7 +244,7 @@ input {
   gap: 26px;
 }
 
-.post-card {
+.board-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -253,14 +258,20 @@ input {
   border-radius: 10px;
 }
 
-.post-card__head {
+.board-card__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 12px;
 }
 
-.post-card__info {
+.board-card__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,38 +282,164 @@ input {
   gap: 6px;
 }
 
-.post-card__title {
+.board-card__title {
   font-size: 18px;
   font-weight: 400;
 }
 
-.post-card__text {
+.board-card__text {
   font-size: 14px;
   font-weight: 400;
   opacity: 0.4;
 }
 
-.post-card__dropdown {
-  margin-top: 7px;
+.board-card__dropdown {
+  position: relative;
+  padding-bottom: 8px;
+}
+.board-card__dropdown:hover .board-card__dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.post-card__dropdown-img {
+.board-card__dropdown-content {
+  display: none;
+  padding: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 11px;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.board-card__dropdown-img {
   width: 24px;
   height: 6px;
 }
 
-.post-card__author-img {
+.board-card__author-img {
   width: 30px;
   height: 30px;
 }
 
-.post-card--new {
+.board-card--new {
   padding-block: 68px 67px;
   border: 1px dashed rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.post-card__text--new {
+.board-card__text--new {
+  font-size: 18px;
+}
+
+.tasks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 26px;
+}
+
+.task-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 32px 16px 20px 17px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.task-card__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 12px;
+}
+
+.task-card__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+}
+
+.task-card__title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.task-card__text {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.task-card__dropdown {
+  position: relative;
+  padding-bottom: 8px;
+}
+.task-card__dropdown:hover .task-card__dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.task-card__dropdown-content {
+  display: none;
+  padding: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 11px;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.task-card__dropdown-img {
+  width: 24px;
+  height: 6px;
+}
+
+.task-card__author-img {
+  width: 30px;
+  height: 30px;
+}
+
+.task-card--new {
+  padding-block: 68px 67px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.task-card__text--new {
   font-size: 18px;
 }
 
@@ -350,4 +487,10 @@ input {
   font-weight: 800;
   text-align: center;
   color: #fff;
+}
+
+.file-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
