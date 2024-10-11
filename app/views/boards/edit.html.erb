@@ -1,0 +1,9 @@
+<h2>Edit Board</h2>
+
+<ul>
+    <% @board.errors.full_messages.each do | message | %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+
+<%= render 'form',board: @board %>

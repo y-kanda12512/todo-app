@@ -1,0 +1,19 @@
+<h2>All Boards</h2>
+
+<div class="boards">
+    <% @boards.each do | board | %>
+    <%= render 'commons/board',board: board %>
+    <% end %>
+
+    <!-- ユーザーがログインしていたらボードを追加できる -->
+    <% if user_signed_in? %>
+    <%= link_to new_board_path,class: 'board-card--new' do %>
+    <span class="board-card__text--new">+ Add new borad</span>
+    <% end %>
+    <% else %>
+    <!-- ユーザー登録されてなかったらユーザー登録を行うように登録画面へ遷移する -->
+    <%= link_to new_user_registration_path,class: 'board-card--new' do %>
+    <span class="board-card__text--new">+ Add new borad</span>
+    <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,15 @@
+<h2>Edit Profile</h2>
+<ul>
+    <% @profile.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+<%= form_with(model: @profile, url: profile_path,method: 'put',local: true) do |f| %>
+<div class="field">
+    <%= f.label :avatar,'Image' %>
+    <%= f.file_field :avatar,class: 'file-input' %>
+</div>
+
+<%= f.submit 'Submit', class: 'form-submit' %>
+
+<% end %>

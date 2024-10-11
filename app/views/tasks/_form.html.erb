@@ -1,0 +1,15 @@
+<%= form_with(model: task,local: true) do |f| %>
+<div class="form-fields">
+    <div class="field">
+        <%= f.label :title,'Name' %>
+        <%= f.text_field :title,class: 'form-input' %>
+    </div>
+
+    <div class="field">
+        <%= f.label :content,'Description' %>
+        <%= f.text_area :content,class: 'form-input' %>
+    </div>
+
+    <%= f.submit 'Submit',class: 'form-submit' %>
+</div>
+<% end %>

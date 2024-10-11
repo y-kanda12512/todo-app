@@ -11,5 +11,11 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # ルートパス設定
-  root to:"posts#index"
+  root to:"boards#index"
+
+  resources :boards do
+    resources :tasks
+  end
+
+  resource :profile, only: [ :edit, :update]
 end
