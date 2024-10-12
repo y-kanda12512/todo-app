@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :boards,dependent: :destroy
   has_many :tasks,dependent: :destroy
+  has_many :comments,dependent: :destroy
   has_one :profile,dependent: :destroy
 
   def has_written_board?(board)
@@ -20,6 +21,7 @@ class User < ApplicationRecord
     profile || build_profile
   end
 
+  # アバターが登録されていたら表示する、登録されていなければデフォルト画像を表示する
   def avatar_image
     if profile&.avatar&.attached?
       profile.avatar

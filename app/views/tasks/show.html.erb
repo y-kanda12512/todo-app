@@ -1,3 +1,25 @@
-<!-- h2もdetial内にある -->
-
 <%= render 'commons/task_detail',task: @task %>
+
+<div class="comment">
+    <h3 class="comment-title">Comment</h3>
+
+    <div class="comment__content">
+
+        <% @comments.each do |comment| %>
+        <div class="comment__card">
+            <%= image_tag comment.user.avatar_image,class: 'comment__card-image' %>
+            <%= comment.content %>
+        </div>
+        <% end %>
+
+        <% if user_signed_in? %>
+        <%= link_to new_board_task_comment_path(@board,@task),class: 'comment-new-card' do %>
+        <span class="comment-new-card__text">+ Add new comment</span>
+        <% end %>
+        <% else %>
+        <%= link_to new_user_registration_path,class: 'comment-new-card' do %>
+        <span class="comment-new-card__text">+ Add new comment</span>
+        <% end %>
+        <% end %>
+    </div>
+</div>
