@@ -69,6 +69,8 @@
 }
 
 .task-card__body {
+  display: flex;
+  justify-content: space-between;
 }
 
 .task-card__author {
@@ -77,6 +79,14 @@
 .task-card__author-img {
   width: 30px;
   height: 30px;
+}
+
+.task-card__comment-count {
+}
+
+.task-card__comment-count-number {
+  color: rgba(0, 0, 0, 0.3);
+  margin-right: 3px;
 }
 
 .task-card--new {

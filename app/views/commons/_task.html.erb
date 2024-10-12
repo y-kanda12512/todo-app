@@ -20,5 +20,11 @@
         <div class="task-card__author">
             <%= image_tag task.user.avatar_image ,class: 'task-card__author-img' %>
         </div>
+        <div class="task-card__comment-count">
+            <div class="task-card__comment-count-number">
+                <%= @task_comment_counts[task.id] %>
+            </div>
+            <%= image_tag 'message-square-outline.png',class: 'task-card__comment--image' %>
+        </div>
     </div>
 </div>

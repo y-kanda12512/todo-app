@@ -17,6 +17,11 @@
   padding: 8px;
 }
 
+.form-textarea {
+  height: 203px;
+  resize: none;
+}
+
 .form-submit {
   display: block;
   width: calc((362px / 414px) * 100%);

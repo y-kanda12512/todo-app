@@ -2,10 +2,16 @@ class TasksController < ApplicationController
     def index
         @board = Board.find(params[:board_id])
         @tasks = Task.where(board_id: params[:board_id])
+          # 各タスクのコメント数をカウント
+        @task_comment_counts = @tasks.each_with_object({}) do |task, counts|
+            counts[task.id] = task.comments.count
+        end
     end
 
     def show
         @task = Task.find(params[:id])
+        @board = Board.find(params[:board_id])
+        @comments = @task.comments
     end
 
     def new

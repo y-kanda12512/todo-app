@@ -1,0 +1,47 @@
+.comment {
+  margin-top: 35px;
+}
+
+.comment__content {
+  display: flex;
+  margin-top: 25px;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.comment-title {
+  font-size: 26px;
+}
+
+.comment__card-image {
+  width: 40px;
+  height: 40px;
+}
+
+.comment__card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.comment-new-card__text {
+  font-size: 14px;
+}
+
+.comment-new-card {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.task-card__comment-count {
+  display: flex;
+}
+
+.task-card__comment--image {
+  width: 20px;
+  height: 20px;
+}

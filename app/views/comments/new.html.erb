@@ -1,0 +1,9 @@
+<h2>New Comment</h2>
+
+<%= form_with(model: @comment,url: board_task_comment_path(@board,@task),local: true,data: { turbo: false }) do  |f| %>
+<div class="field">
+    <%= f.text_area :content,class: 'form-input form-textarea' %>
+</div>
+
+<%= f.submit 'Submit',class: 'form-submit' %>
+<% end %>
