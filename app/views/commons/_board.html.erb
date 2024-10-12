@@ -10,7 +10,7 @@
             </div>
             <% end %>
         </div>
-        <% if user_signed_in? && current_user.has_written?(board) %>
+        <% if user_signed_in? && current_user.has_written_board?(board) %>
         <div class="board-card__dropdown">
             <%= image_tag 'dots.png',class: 'board-card__dropdown-img',alt: 'オプション' %>
             <div class="board-card__dropdown-content">

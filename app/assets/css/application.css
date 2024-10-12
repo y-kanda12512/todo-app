@@ -233,6 +233,56 @@ input {
     opacity: 0;
   }
 }
+.form-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 33px;
+}
+
+.fields-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 10px;
+  background: #f4f4f4;
+  padding: 8px;
+}
+
+.form-submit {
+  display: block;
+  width: 87.4396135266%;
+  padding: 8px 10px 7px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 4px;
+  background: #f8bd1c;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+}
+
+.file-input {
+  display: block;
+}
+
 .boards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -443,54 +493,63 @@ input {
   font-size: 18px;
 }
 
-.form-fields {
+.task-detail__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.task-detail__head h2 {
+  margin-bottom: 0;
+}
+
+.task-detail__dropdown {
+  position: relative;
+  padding-bottom: 8px;
+}
+.task-detail__dropdown:hover .task-detail__dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.task-detail__dropdown-img {
+  width: 24px;
+}
+
+.task-detail__dropdown-content {
+  display: none;
+  padding: 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 33px;
+  gap: 11px;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
-.fields-password {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 16px;
+.task-detail__eyecatch {
+  margin-top: 32px;
 }
-
-.form-input {
+.task-detail__eyecatch img {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.task-detail__content {
+  margin-top: 35px;
+  padding: 20px 16px 26px 15px;
+  font-size: 14px;
   border-radius: 10px;
   background: #f4f4f4;
-  padding: 8px;
-}
-
-.form-submit {
-  display: block;
-  width: 87.4396135266%;
-  padding: 8px 10px 7px;
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border-radius: 4px;
-  background: #f8bd1c;
-  font-size: 18px;
-  font-weight: 800;
-  text-align: center;
-  color: #fff;
-}
-
-.file-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }

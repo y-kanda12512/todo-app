@@ -1,0 +1,24 @@
+<%= form_with(model: task, url: board_task_path(@board,@task), local: true, data: { turbo: false }) do |f| %>
+<div class="form-fields">
+    <div class="field">
+        <%= f.label :eyecatch,'Eyecatch' %>
+        <%= f.file_field :eyecatch,class: 'file-input'%>
+    </div>
+    <div class="field">
+        <%= f.label :title,'Name' %>
+        <%= f.text_field :title,class: 'form-input' %>
+    </div>
+
+    <div class="field">
+        <%= f.label :content,'Description' %>
+        <%= f.text_area :content,class: 'form-input' %>
+    </div>
+
+    <div class="field">
+        <%= f.label :due_date,'dueDate' %>
+        <%= f.date_field :due_date,class: 'form-input' %>
+    </div>
+
+    <%= f.submit 'Submit',class: 'form-submit' %>
+</div>
+<% end %>
