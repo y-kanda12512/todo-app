@@ -1,0 +1,22 @@
+<div class="task-detail__head">
+    <h2><%= task.title %></h2>
+    <% if user_signed_in? && current_user.has_written_task?(task) %>
+    <div class="task-detail__dropdown">
+        <%= image_tag 'dots.png',class: 'task-detail__dropdown-img',alt: 'オプション' %>
+        <div class="task-detail__dropdown-content">
+            <%= link_to 'Edit', edit_board_task_path(task.board,task),class: 'task-detail__dropdown-link' %>
+            <%= link_to 'Delete', board_task_path(task.board,task), method: :delete, data: { confirm: '本当に削除しますか？' } ,class: 'task-detail__dropdown-link' %>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<% if task.eyecatch.attached? %>
+<div class="task-detail__eyecatch">
+    <%= image_tag task.eyecatch %>
+</div>
+<% end %>
+
+<div class="task-detail__content">
+    <%= task.content %>
+</div>

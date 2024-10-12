@@ -1,6 +1,6 @@
 class Board < ApplicationRecord
     belongs_to :user
-    has_many :task
+    has_many :tasks
   
     validates :name, presence: true
     validates :name, length: { minimum: 2, maximum: 100 }
