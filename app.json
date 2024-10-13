@@ -1,23 +1,23 @@
 {
-  "addons": [
-
-  ],
-  "buildpacks": [
-
-  ],
-  "description": "koreha",
-  "env": {
-    "RAILS_MAX_THREADS": {
-      "required": true
+    "name": "todo-app",
+    "description": "これはtodoを管理するアプリです。",
+    "scripts": {},
+    "env": {
+        "RAILS_MAX_THREADS": {
+            "required": true
+        },
+        "WEB_CONCURRENCY": {
+            "required": true
+        }
     },
-    "WEB_CONCURRENCY": {
-      "required": true
-    }
-  },
-  "formation": {
-  },
-  "name": "todo-app",
-  "scripts": {
-  },
-  "stack": "heroku-22"
+    "formation": {},
+    "addons": [],
+    "buildpacks": [{
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "heroku/ruby"
+        }
+    ],
+    "stack": "heroku-22"
 }
