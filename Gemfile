@@ -21,6 +21,7 @@ gem "jbuilder"
 gem 'sassc-rails'
 gem "rails-ujs"
 gem 'devise'
+gem 'aws-sdk-s3',require: false
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -46,6 +47,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem 'dotenv-rails'
 end
 
 group :development do
